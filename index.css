@@ -1,0 +1,197 @@
+/* Calendar Styles */
+.calendar {
+  display: grid; /* Use grid layout for the calendar */
+  grid-template-columns: 1fr repeat(5, 1fr); /* 1 column for time header, 5 columns for days */
+  grid-template-rows: repeat(25, 1fr); /* 24 hours + 1 row for header */
+  gap: 1px; /* Space between grid items */
+  width: 100%; /* Full width of the container */
+  max-height: 600px; /* Max height of the calendar */
+  overflow: auto; /* Allow scrolling if content exceeds height */
+}
+
+.header {
+  display: contents; /* Allow header items to be positioned directly in the grid */
+}
+
+.day-cell, .time-cell {
+  padding: 5px; /* Padding inside the cells */
+  background-color: #f0f0f0; /* Light gray background */
+  border: 1px solid #ccc; /* Light gray border */
+  text-align: center; /* Center text in the cells */
+}
+
+.time-cell {
+  grid-column: 1; /* Time header occupies the first column */
+}
+
+.day-cell {
+  grid-column: span 1; /* Each day occupies 1 column */
+}
+
+.time-slot {
+  padding: 5px; /* Padding inside the time slot */
+  background-color: #fff; /* White background for time slots */
+  border: 1px solid #ccc; /* Light gray border for time slots */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.time-slot.selected {
+  background-color: #a5d6a7; /* Green background for selected time slots */
+  color: white; /* White text for selected time slots */
+}
+
+.row {
+  display: contents; /* Allow grid items to align with the grid */
+}
+
+/* Calendar Container */
+.calendar-container {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  margin: 20px; /* Margin around the container */
+}
+
+/* Classes Section Styles */
+.classes-section {
+  padding: 20px; /* Padding inside the section */
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid #ddd; /* Light gray border */
+  margin-bottom: 20px; /* Margin below the section */
+}
+
+/* Class and Subject Cell Styles */
+.class-cell {
+  padding: 10px; /* Padding inside the class cell */
+  margin: 5px 0; /* Margin above and below the class cell */
+  background-color: #e0e0e0; /* Gray background for class cells */
+  cursor: pointer; /* Pointer cursor on hover */
+  border: 1px solid #ccc; /* Light gray border */
+}
+
+.subject-cell {
+  padding: 10px; /* Padding inside the subject cell */
+  margin: 5px 0; /* Margin above and below the subject cell */
+  background-color: #d0d0d0; /* Slightly darker gray background for subject cells */
+  cursor: pointer; /* Pointer cursor on hover */
+  border: 1px solid #bbb; /* Slightly darker gray border */
+}
+
+/* Modal Styles */
+.modal-background {
+  position: fixed; /* Fixed position for overlay */
+  top: 0; /* Align to the top of the viewport */
+  left: 0; /* Align to the left of the viewport */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex; /* Use flexbox to center modal */
+  justify-content: center; /* Center modal horizontally */
+  align-items: center; /* Center modal vertically */
+}
+
+.modal {
+  background-color: #fff; /* White background for modal */
+  padding: 20px; /* Padding inside the modal */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.close-button {
+  background-color: #57068c; /* NYU purple background */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding for the close button */
+  border: 1px solid #57068c; /* Purple border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: absolute; /* Absolute positioning */
+  top: 10px; /* Position from the top */
+  right: 10px; /* Position from the right */
+  text-align: center; /* Center text within the button */
+}
+
+.close-button:hover {
+  background-color: white; /* White background on hover */
+  color: #57068c; /* Purple text color on hover */
+  border-color: #57068c; /* Purple border on hover */
+}
+
+/* Notification Box Styles */
+.notification-box {
+  position: fixed; /* Fixed position for the notification box */
+  bottom: 20px; /* Position from the bottom */
+  right: 20px; /* Position from the right */
+  background-color: #f8d7da; /* Light red background */
+  color: #721c24; /* Dark red text color */
+  padding: 10px; /* Padding inside the box */
+  border: 1px solid #f5c6cb; /* Light red border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Student Info Section Styles */
+.student-info {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out items */
+  margin-bottom: 20px; /* Margin below the section */
+}
+
+.holds, .enrollment-dates {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 10px; /* Padding inside the sections */
+  border-radius: 5px; /* Rounded corners */
+  width: 48%; /* Width of each section */
+}
+
+.holds h3, .enrollment-dates h3 {
+  margin-top: 0; /* Remove margin at the top of headings */
+}
+
+.holds p, .enrollment-dates p {
+  margin-bottom: 0; /* Remove margin at the bottom of paragraphs */
+}
+
+/* HeaderBanner Styles */
+.header-banner {
+  background-color: #57068c; /* NYU purple background */
+  color: white; /* White text color */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out logo and user info */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Padding around the banner */
+}
+
+.logo-container {
+  display: flex; /* Use flexbox for logo container */
+  align-items: center; /* Center logo vertically */
+}
+
+.nyu-logo {
+  height: 40px; /* Height of the NYU logo */
+}
+
+.user-info {
+  display: flex; /* Use flexbox for user info */
+  align-items: center; /* Center user info vertically */
+}
+
+.user-name {
+  margin-right: 15px; /* Space between user name and logout link */
+}
+
+.logout-link {
+  color: #57068c; /* NYU purple text color */
+  background-color: white; /* White background for logout link */
+  padding: 5px 10px; /* Padding inside the link */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from the link */
+  font-weight: bold; /* Bold text */
+  border: 1px solid #57068c; /* Purple border */
+}
+
+.logout-link:hover {
+  background-color: #ddd; /* Slightly darker background on hover */
+  border-color: #ddd; /* Change border color on hover */
+  color: #57068c; /* Maintain purple text color on hover */
+}
